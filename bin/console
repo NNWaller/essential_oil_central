@@ -12,3 +12,5 @@ require "essential_oil_central"
 
 require "irb"
 IRB.start(__FILE__)
+
+puts "Welcome to Your Oil sandbox!"
