@@ -2,6 +2,7 @@
 #Your console and your essential_oil_central files in bin will be dependent on this 
 #environment file instead of individual files
 
+#require 'pry'
 #require 'nokogiri'
 #require 'open-uri'
 
