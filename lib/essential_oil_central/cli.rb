@@ -1,12 +1,14 @@
 #Our CLI Controller - Where all of the logic is encapsulated.
 class EssentialOilCentral::CLI
     def call
-        puts "Welcome to Essential Oil Central"
         list_oils
+        menu
+        exit_program
     end
 
     #This is basically test code that will be modified later.
     def list_oils
+        puts "Welcome to Essential Oil Central"
         puts <<-DOC
         1. Lavender
         2. Frankincense
@@ -23,5 +25,26 @@ class EssentialOilCentral::CLI
         DOC
     end
         
+#Be sure to adjust this so that it does not put the else statement when input is "exit"
+    def menu
+        input = nil
+        while input != "exit"
+          puts " Please enter the number 1-12 of the oil you would like to learn more about or type List to list the oils again or type Exit to exit."
+          input = gets.strip.downcase
+          case input
+          when "1"
+            puts "lavender info"
+          when "2"
+            puts "frankincense info"
+          when "list"
+            list_oils
+          else 
+            puts "I’m sorry. I did not understand your entry."
+          end
+        end
+    end
 
+     def exit_program
+        puts "Farewell! Have a splendid day!"
+     end
 end 
