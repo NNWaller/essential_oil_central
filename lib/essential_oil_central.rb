@@ -1,7 +1,5 @@
-require "essential_oil_central/version"
+require_relative "./essential_oil_central/version"
+require_relative "./essential_oil_central/cli"
 
 
-module EssentialOilCentral
-  class Error < StandardError; end
-  # Your code goes here...
-end
+

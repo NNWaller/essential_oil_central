@@ -1,5 +1,5 @@
 #Code to create each oil object and set attributes and descriptions. 
-class EssentialOilCentral::Oil 
+#class EssentialOilCentral::Oil 
 #attr_accessor  :benefit, :aroma, :uses
 #attr_reader :name, :description
 
@@ -29,5 +29,5 @@ class EssentialOilCentral::Oil
  #end
 
 
-end
-end 
+
+#end 
