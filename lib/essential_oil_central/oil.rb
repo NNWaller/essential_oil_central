@@ -1,9 +1,27 @@
 #Code to create each oil object and set attributes and descriptions. 
-#class EssentialOilCentral::Oil 
+class EssentialOilCentral::Oil 
 #attr_accessor  :benefit, :aroma, :uses
 #attr_reader :name, :description
 
 #@@all = [] 
+
+def self.collection
+  #This should return the entire collection of oil instances 
+  puts <<-DOC
+        1. Lavender
+        2. Frankincense
+        3. Peppermint
+        4. Eucalyptus
+        5. Tea Tree
+        6. Grapefruit
+        7. Rosemary
+        8. Lemon
+        9. Sweet Orange
+        10. Patchouli
+        11. Bergamot
+        12. Lemongrass
+        DOC
+end
 
 #Each type of oil will need to be initialized with a name and description
   #def initialize (name, description)
@@ -30,4 +48,4 @@
 
 
 
-#end 
+end 

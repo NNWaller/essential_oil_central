@@ -24,6 +24,10 @@ class EssentialOilCentral::CLI
         12. Lemongrass
         DOC
     end
+
+    #We wish we could have this to work
+    #@oils = EssentialOilCentral::Oil.collection that would return the entire 
+    #collection of all the oils
         
 #Be sure to adjust this so that it does not put the else statement when input is "exit"
     def menu

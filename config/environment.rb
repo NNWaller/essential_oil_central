@@ -6,9 +6,9 @@
 #require 'nokogiri'
 #require 'open-uri'
 
-require_relative "../lib/essential_oil_central/scraper.rb"
-require_relative "../lib/essential_oil_central/oil.rb"
-require_relative "../lib/essential_oil_central/cli.rb"
-require_relative "../lib/essential_oil_central/version.rb"
+#require_relative "../lib/essential_oil_central/scraper.rb"
+#require_relative "../lib/essential_oil_central/oil.rb"
+#require_relative "../lib/essential_oil_central/cli.rb"
+#require_relative "../lib/essential_oil_central/version.rb"
 
 
