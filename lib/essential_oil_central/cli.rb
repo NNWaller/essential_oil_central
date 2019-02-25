@@ -23,10 +23,13 @@ class EssentialOilCentral::CLI
         11. Bergamot
         12. Lemongrass
         DOC
-        #@aoils is going to be the array of oils that is produced by the 
+        #@oils is going to be the array of oils that is produced by the 
         #EssentialOilCentral::Oil.collection method
         @oils = EssentialOilCentral::Oil.collection
-    end
+        @oils.each do |oil|
+          puts "#{oil.name} - DESCRIPTION: #{oil.description} - BENEFITS: #{oil.benefits} - AROMA: #{oil.aroma} - USES: #{oil.uses}"
+        end
+      end
         
 #Be sure to adjust this so that it does not put the else statement when input is "exit"
     def menu
