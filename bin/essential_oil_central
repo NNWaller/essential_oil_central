@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 
+require "bundler/setup"
+require "essential_oil_central"
+
 #require_relative "../config/environment"
 
 #Here we will need to require a relative file that will execute the program.
-require_relative '../lib/essential_oil_central'
+#require_relative '../lib/essential_oil_central'
 EssentialOilCentral::CLI.new.call
 
 #puts "Hello World"
