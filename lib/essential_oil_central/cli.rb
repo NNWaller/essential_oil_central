@@ -43,7 +43,22 @@ class EssentialOilCentral::CLI
           #the @oils array that corresponds to the user's inputted integer -1.
           
           if input.to_i.between?(1,2)
-            puts @oils[input.to_i-1]
+            selected_oil = @oils[input.to_i-1]
+            puts  <<-DOC 
+* * * * * * *  #{selected_oil.name} * * * * * * *
+
+DESCRIPTION: #{selected_oil.description}
+
+BENEFITS: #{selected_oil.benefits}
+
+AROMA: #{selected_oil.aroma}
+
+USES: #{selected_oil.uses}
+
+DOC
+             #display_oil
+            #selected_oil = @oils[input.to_i-1]
+            #puts "#{selected_oil.name} - DESCRIPTION: #{selected_oil.description} - BENEFITS: #{selected_oil.benefits} - AROMA: #{selected_oil.aroma} - USES: #{selected_oil.uses}"
           elsif input == "list" 
             list_oils
           elsif input == "exit"
@@ -54,7 +69,15 @@ class EssentialOilCentral::CLI
         end
     end
 
-    # def exit_program
-      #  puts "Farewell! Have a splendid day!"
-    # end
+   #def display_oil
+    #  selected_oil = @oils[input.to_i-1]
+    #  puts "\|/    #{selected_oil.name}    \|/"
+     # puts  <<-DOC 
+      #         DESCRIPTION: #{selected_oil.description}
+       #        BENEFITS: #{selected_oil.benefits}
+       #        AROMA: #{selected_oil.aroma}
+       #        USES: #{selected_oil.uses}
+
+      #DOC
+   # end
 end 

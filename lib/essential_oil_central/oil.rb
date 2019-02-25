@@ -5,6 +5,7 @@ class EssentialOilCentral::Oil
 #@@all = [] 
 
   def self.collection
+    #This method now needs to scrape the website and return real objects
   #This should return the entire collection of oil instances 
    #puts <<-DOC
        # 1. Lavender
