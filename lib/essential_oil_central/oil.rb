@@ -7,6 +7,8 @@ class EssentialOilCentral::Oil
   def self.collection
     #This method now needs to scrape the website and return real objects
   #This should return the entire collection of oil instances 
+  #self.scrape_oils
+    
    #puts <<-DOC
        # 1. Lavender
        # 2. Frankincense
@@ -37,6 +39,13 @@ class EssentialOilCentral::Oil
        [oil_1, oil_2]   
   end
 
+  #def self.scrape_oils
+    #oils = [ ]
+    #Go to website
+    #extract the oils and their properties
+    #instantiate an oil object 
+    #end up with an array of oil objects that can be operated on individually
+  #end
 #Each type of oil will need to be initialized with a name and description
   #def initialize (name, description)
    # @name = name
