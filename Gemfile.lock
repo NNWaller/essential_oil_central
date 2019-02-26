@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     essential_oil_central (0.1.0)
+      nokogiri
 
 GEM
   remote: https://rubygems.org/

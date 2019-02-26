@@ -7,7 +7,8 @@ class EssentialOilCentral::Oil
   def self.collection
     #This method now needs to scrape the website and return real objects
   #This should return the entire collection of oil instances 
-  #self.scrape_oils
+  self.scrape_oils #returns the array of oil objects that are created by the 
+                   #scrape_auracasia method.
     
    #puts <<-DOC
        # 1. Lavender
@@ -39,13 +40,21 @@ class EssentialOilCentral::Oil
        [oil_1, oil_2]   
   end
 
-  #def self.scrape_oils
-    #oils = [ ]
+  def self.scrape_oils
+    oils = [ ]
+    oils << self.scrape_auracasia
     #Go to website
     #extract the oils and their properties
     #instantiate an oil object 
     #end up with an array of oil objects that can be operated on individually
-  #end
+  end
+
+  def self.scrape_auracasia
+    doc = Nokogiri::HTML(open("https://www.auracacia.com/community/essential-oil-must-haves"))
+   #binding.pry
+  end
+
+
 #Each type of oil will need to be initialized with a name and description
   #def initialize (name, description)
    # @name = name
@@ -58,17 +67,5 @@ class EssentialOilCentral::Oil
  #attributes.each do |attribute_name, attribute_value|
  #self.send("#{attribute_name}=", attribute_value)
  #end
-
- #We will need something to interact with the CLI where the user can enter a number
- #and the appropriate oil type is displayed. The number they enter will need to be 
- #converted to an integer from a string and it will need to be reduced by 1 in order 
- #to access the appropriate index number for that oil type from the @@all array 
- #of oils
- # Like this...
- #def self.find(id)
- #  @@all[id.to_i-1]
- #end
-
-
 
 end 
