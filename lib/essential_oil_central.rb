@@ -5,3 +5,5 @@ require_relative "./essential_oil_central/version"
 require_relative "./essential_oil_central/oil"
 require_relative "./essential_oil_central/cli"
 
+#Keep in mind that you will need to simply move all of this code into your 
+#config/environment file and simply require the environment file here! 

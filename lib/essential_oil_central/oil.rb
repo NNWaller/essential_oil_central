@@ -4,11 +4,23 @@ class EssentialOilCentral::Oil
 
 #@@all = [] 
 
-  def self.collection
+#This code should add each oil instance to the @@all variable
+#def initialize
+#  @@all << self
+
+#end
+
+#def self.all
+  #@@all
+#end 
+
+  #def self.collection
     #This method now needs to scrape the website and return real objects
   #This should return the entire collection of oil instances 
-  self.scrape_oils #returns the array of oil objects that are created by the 
-                   #scrape_auracasia method.
+  #self.scrape_oils #returns the array of oil objects that are created by the 
+                   #scrape_auracasia method. It should really be changed to be a 
+                   #self.all method to return the entire @@all collection of oil
+                   #objects
     
    #puts <<-DOC
        # 1. Lavender
@@ -24,34 +36,49 @@ class EssentialOilCentral::Oil
        # 11. Bergamot
        # 12. Lemongrass
         #DOC
-        oil_1 = self.new
-        oil_1.name = "Lavender"
-        oil_1.description = "The most popular essential oil because of its versatility and well-liked floral, herbal aroma, lavender can be used in a variety of ways to inspire calm and relaxation."
-        oil_1.benefits = "Calming, relaxing"
-        oil_1.aroma = "Floral, herbal"
-        oil_1.uses = "Body oils, massage oils, cleansers, lotions, creams, body mists, perfumes, shampoos, conditioners, hair masks, hair serums, hair mists, room mists, diffusions "
+        #oil_1 = self.new
+       #oil_1.name = "Lavender"
+        #oil_1.description = "The most popular essential oil because of its versatility and well-liked floral, herbal aroma, lavender can be used in a variety of ways to inspire calm and relaxation."
+       # oil_1.benefits = "Calming, relaxing"
+       # oil_1.aroma = "Floral, herbal"
+       # oil_1.uses = "Body oils, massage oils, cleansers, lotions, creams, body mists, perfumes, shampoos, conditioners, hair masks, hair serums, hair mists, room mists, diffusions "
      
-        oil_2 = self.new
-        oil_2.name = "Frankincense"
-        oil_2.description = "Used extensively in incense and fine perfumes for thousands of years, frankincense essential oil is characterized by a resinous aroma and can bring a calming benefit to body care, diffusion and air freshening as well as grounding practices like meditation or yoga."
-        oil_2.benefits = "Meditative, grounding, calming"
-        oil_2.aroma = "Resinous, balsamic"
-        oil_2.uses = "Body oils, massage oils, body mists, perfumes, room mists, diffusions, meditation roll-ons and mists, yoga mists."
-       [oil_1, oil_2]   
-  end
+       # oil_2 = self.new
+       # oil_2.name = "Frankincense"
+        #oil_2.description = "Used extensively in incense and fine perfumes for thousands of years, frankincense essential oil is characterized by a resinous aroma and can bring a calming benefit to body care, diffusion and air freshening as well as grounding practices like meditation or yoga."
+       # oil_2.benefits = "Meditative, grounding, calming"
+       # oil_2.aroma = "Resinous, balsamic"
+       # oil_2.uses = "Body oils, massage oils, body mists, perfumes, room mists, diffusions, meditation roll-ons and mists, yoga mists."
+       #[oil_1, oil_2]   
+  #end
 
-  def self.scrape_oils
-    oils = [ ]
-    oils << self.scrape_auracasia
+  #def self.scrape_oils
+  #  @oils = [ ]
+   # @oils << self.scrape_auracasia
     #Go to website
     #extract the oils and their properties
     #instantiate an oil object 
     #end up with an array of oil objects that can be operated on individually
-  end
+  #  @oils
+  #end
 
   def self.scrape_auracasia
+   @oils = [ ]
     doc = Nokogiri::HTML(open("https://www.auracacia.com/community/essential-oil-must-haves"))
    #binding.pry
+
+    doc.css(".col-xs-16").each do |column|
+      oil = self.new
+      oil.name = column.css("h2").text
+      oil.description = column.css("p:nth-of-type(odd)").first
+      oil.benefits = column.css(":nth-child(3)").first
+      oil.aroma = column.css(":nth-child(5)").text
+      oil.uses = column.css(":nth-child(7)").text
+     @oils << oil
+     @oils
+      #binding.pry
+    end
+
   end
 
 
@@ -68,4 +95,4 @@ class EssentialOilCentral::Oil
  #self.send("#{attribute_name}=", attribute_value)
  #end
 
-end 
+end

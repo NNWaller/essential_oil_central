@@ -1,6 +1,8 @@
 #Our CLI Controller - Where all of the logic is encapsulated.
 class EssentialOilCentral::CLI
-    def call
+  attr_accessor  :name, :description, :benefits, :aroma, :uses
+    
+   def call
         list_oils
         menu
         #exit_program
@@ -25,15 +27,16 @@ class EssentialOilCentral::CLI
         DOC
         #@oils is going to be the array of oils that is produced by the 
         #EssentialOilCentral::Oil.collection method
-        @oils = EssentialOilCentral::Oil.collection
-        @oils.each do |oil|
-          puts "#{oil.name} - DESCRIPTION: #{oil.description} - BENEFITS: #{oil.benefits} - AROMA: #{oil.aroma} - USES: #{oil.uses}"
+        #@oils = EssentialOilCentral::Oil.collection
+        #@oils.each do |oil|
+        #  puts "#{oil.name} - DESCRIPTION: #{oil.description} - BENEFITS: #{oil.benefits} - AROMA: #{oil.aroma} - USES: #{oil.uses}"
         end
       end
         
 #Be sure to adjust this so that it does not put the else statement when input is "exit"
     def menu
         input = nil
+        #@oils = EssentialOilCentral::Oil.all
         while input != "exit"
           puts " Please enter the number 1-12 of the oil you would like to learn more about or type List to list the oils again or type Exit to exit."
           input = gets.strip.downcase
@@ -42,18 +45,18 @@ class EssentialOilCentral::CLI
           #between 1-2 for test purposes. Finally, we will be able to access the index of 
           #the @oils array that corresponds to the user's inputted integer -1.
           
-          if input.to_i.between?(1,2)
-            selected_oil = @oils[input.to_i-1]
+          if input.to_i.between?(1,12)
+            oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
             puts  <<-DOC 
-* * * * * * *  #{selected_oil.name} * * * * * * *
+* * * * * * *  #{oil.name} * * * * * * *
 
-DESCRIPTION: #{selected_oil.description}
+DESCRIPTION: #{oil.description}
 
-BENEFITS: #{selected_oil.benefits}
+BENEFITS: #{oil.benefits}
 
-AROMA: #{selected_oil.aroma}
+AROMA: #{oil.aroma}
 
-USES: #{selected_oil.uses}
+USES: #{oil.uses}
 
 DOC
              #display_oil
@@ -80,4 +83,4 @@ DOC
 
       #DOC
    # end
-end 
+  #end
