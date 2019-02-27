@@ -48,7 +48,7 @@ class EssentialOilCentral::CLI
           if input.to_i.between?(1,12)
             oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
             puts  <<-DOC 
-* * * * * * *  #{oil.name} * * * * * * *
+* * * * * * *  #{oil.name} * * * * * * 
 
 DESCRIPTION: #{oil.description}
 

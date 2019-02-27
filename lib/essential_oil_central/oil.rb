@@ -63,21 +63,35 @@ class EssentialOilCentral::Oil
   #end
 
   def self.scrape_auracasia
-   @oils = [ ]
+   #@oils = [ ]
     doc = Nokogiri::HTML(open("https://www.auracacia.com/community/essential-oil-must-haves"))
    #binding.pry
 
-    doc.css(".col-xs-16").each do |column|
-      oil = self.new
-      oil.name = column.css("h2").text
-      oil.description = column.css("p:nth-of-type(odd)").first
-      oil.benefits = column.css(":nth-child(3)").first
-      oil.aroma = column.css(":nth-child(5)").text
-      oil.uses = column.css(":nth-child(7)").text
-     @oils << oil
-     @oils
-      #binding.pry
-    end
+   #names_array = 
+
+   #descriptions_array = doc.css(".col-xs-16 p:nth-of-type(odd)")
+#NOTE: The follwoing two lines of code work to convert the benefits string to an array
+   benefits_array = doc.css(".col-xs-16 :nth-child(3)").text.split("Benefit: ")
+   benefits_array -= [""]
+   binding.pry
+
+  # aromas_array = 
+
+   #uses_array = 
+
+
+
+    #doc.css(".col-xs-16").each do |column|
+      #oil = self.new
+      #oil.name = column.css("h2").text
+      #oil.description = column.css.first.attr("p:nth-of-type(odd)")
+     # oil.benefits = column.css.first.attr(":nth-child(3)")
+     # oil.aroma = column.css(":nth-child(5)").text
+      #oil.uses = column.css(":nth-child(7)").text
+    # @oils << oil
+     #@oils
+    #binding.pry
+   # end
 
   end
 
