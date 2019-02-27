@@ -68,12 +68,18 @@ class EssentialOilCentral::Oil
    #binding.pry
 
    #names_array = 
+#******************************************
+   #NOTE: The following code gives me the exact string I need for the lavender details. 
+   #I need to find a way to access each index of the array in order to capture oil
+   #details for each oil!! How can I iterate over this array and access each index??
+   #description_string = doc.css(".col-xs-16 p:nth-of-type(odd)")[0].text
+   #binding.pry
 
-   #descriptions_array = doc.css(".col-xs-16 p:nth-of-type(odd)")
+#****************************************
 #NOTE: The follwoing two lines of code work to convert the benefits string to an array
-   benefits_array = doc.css(".col-xs-16 :nth-child(3)").text.split("Benefit: ")
-   benefits_array -= [""]
-   binding.pry
+   #benefits_array = doc.css(".col-xs-16 :nth-child(3)").text.split("Benefit: ")
+  # benefits_array -= [""]
+   #binding.pry
 
   # aromas_array = 
 
