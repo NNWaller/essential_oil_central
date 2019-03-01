@@ -2,7 +2,18 @@
 class EssentialOilCentral::Oil 
   attr_accessor  :name, :description, :benefits, :aroma, :uses
 
-#@@all = [] 
+@@all = [] 
+
+def self.all
+  @@all
+end 
+
+def save
+  @@all << self
+
+end
+
+
 
 #This code should add each oil instance to the @@all variable
 #def initialize
@@ -62,9 +73,9 @@ class EssentialOilCentral::Oil
   #  @oils
   #end
 
-  def self.scrape_auracasia
+  #def self.scrape_auracasia
    #@oils = [ ]
-    doc = Nokogiri::HTML(open("https://www.auracacia.com/community/essential-oil-must-haves"))
+    #doc = Nokogiri::HTML(open("https://www.auracacia.com/community/essential-oil-must-haves"))
    #binding.pry
 
    #names_array = 
@@ -78,7 +89,9 @@ class EssentialOilCentral::Oil
 #****************************************
 #NOTE: The follwoing two lines of code work to convert the benefits string to an array
    #benefits_array = doc.css(".col-xs-16 :nth-child(3)").text.split("Benefit: ")
-  # benefits_array -= [""]
+  #benefits_array -= [""]
+  #benefits_array = doc.css(".col-xs-16 :nth-child(3)").text.gsub("\Benefit:","")
+  #benefits_array = doc.css(".col-xs-16 :nth-child(3)").text
    #binding.pry
 
   # aromas_array = 
@@ -99,7 +112,7 @@ class EssentialOilCentral::Oil
     #binding.pry
    # end
 
-  end
+ #end
 
 
 #Each type of oil will need to be initialized with a name and description
