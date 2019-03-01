@@ -2,7 +2,7 @@
 class EssentialOilCentral::Oil 
   attr_accessor  :name, :description, :benefits, :aroma, :uses
 
-@@all = [] 
+ @@all = [] 
 
 def self.all
   @@all
