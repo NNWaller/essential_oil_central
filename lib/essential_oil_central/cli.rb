@@ -1,6 +1,6 @@
 #Our CLI Controller - Where all of the logic is encapsulated.
 class EssentialOilCentral::CLI
-  attr_accessor  :name, :description, :benefits, :aroma, :uses
+  attr_accessor  :name, :description, :benefits, :aroma, :uses #:url
     
    def call
        EssentialOilCentral::Scraper.new.scrape_auracasia   
@@ -17,6 +17,10 @@ class EssentialOilCentral::CLI
 
         end
       end
+
+    #def more_info_in_browser
+    
+    #end
         
 
     def menu
@@ -50,6 +54,8 @@ DOC
           
           elsif input == "list" 
             list_oils
+          #elsif input == "more"
+          # more_info_in_browser
           elsif input == "exit"
             puts "Farewell! Have a splendid day!"
           elsif 
