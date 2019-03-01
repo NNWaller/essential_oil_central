@@ -3,6 +3,7 @@ class EssentialOilCentral::CLI
   attr_accessor  :name, :description, :benefits, :aroma, :uses
     
    def call
+       EssentialOilCentral::Scraper.new.scrape_auracasia   
         list_oils
         menu
         #exit_program
@@ -11,52 +12,38 @@ class EssentialOilCentral::CLI
     #This is basically test code that will be modified later.
     def list_oils
         puts "Welcome to Essential Oil Central"
-        puts <<-DOC
-        1. Lavender
-        2. Frankincense
-        3. Peppermint
-        4. Eucalyptus
-        5. Tea Tree
-        6. Grapefruit
-        7. Rosemary
-        8. Lemon
-        9. Sweet Orange
-        10. Patchouli
-        11. Bergamot
-        12. Lemongrass
-        DOC
-        #@oils is going to be the array of oils that is produced by the 
-        #EssentialOilCentral::Oil.collection method
-        #@oils = EssentialOilCentral::Oil.collection
-        #@oils.each do |oil|
-        #  puts "#{oil.name} - DESCRIPTION: #{oil.description} - BENEFITS: #{oil.benefits} - AROMA: #{oil.aroma} - USES: #{oil.uses}"
+        EssentialOilCentral::Oil.all.each_with_index do |oil, i|
+          puts "#{i +1}.  #{oil.name}"
+
         end
       end
         
-#Be sure to adjust this so that it does not put the else statement when input is "exit"
+
     def menu
         input = nil
-        #@oils = EssentialOilCentral::Oil.all
+      
         while input != "exit"
           puts " Please enter the number 1-12 of the oil you would like to learn more about or type List to list the oils again or type Exit to exit."
           input = gets.strip.downcase
           #The following 2 lines will help us convert the user's input from a string
           #to an integer. It will then allow us to check to see if that integer is
-          #between 1-2 for test purposes. Finally, we will be able to access the index of 
+          #between 1-12 for test purposes. Finally, we will be able to access the index of 
           #the @oils array that corresponds to the user's inputted integer -1.
           
+          #if input.to_i < EssentialOilCentral::Oil.all.length
           if input.to_i.between?(1,12)
-            oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
+            #oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
+            selected_oil = EssentialOilCentral::Oil.all[input.to_i-1]
             puts  <<-DOC 
-* * * * * * *  #{oil.name} * * * * * * 
+* * * * * * *  #{selected_oil.name} * * * * * * 
 
-DESCRIPTION: #{oil.description}
+Description: #{selected_oil.description}
 
-BENEFITS: #{oil.benefits}
+#{selected_oil.benefits}
 
-AROMA: #{oil.aroma}
+#{selected_oil.aroma}
 
-USES: #{oil.uses}
+#{selected_oil.uses}
 
 DOC
              #display_oil
@@ -83,4 +70,4 @@ DOC
 
       #DOC
    # end
-  #end
+  end
