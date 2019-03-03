@@ -39,7 +39,7 @@ class EssentialOilCentral::CLI
             #oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
             selected_oil = EssentialOilCentral::Oil.all[input.to_i-1]
             puts  <<-DOC 
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * #{selected_oil.name} * * * * * * * * * * * * * * * * * * * * * * * * * * * * *   
+========================  #{selected_oil.name}  =================================  
 
 Description: #{selected_oil.description}
 
@@ -49,7 +49,7 @@ Description: #{selected_oil.description}
 
 #{selected_oil.uses}
 
-_________________________________________________________________________________________________________________________________________
+==================================================================================
 DOC
           
           elsif input == "list" 
