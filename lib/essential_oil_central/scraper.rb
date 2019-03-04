@@ -17,14 +17,15 @@ class EssentialOilCentral::Scraper
         oil.benefits = oil_col.css(":nth-child(3)").text
         oil.aroma = oil_col.css(":nth-child(5)").text
         oil.uses = oil_col.css(":nth-child(7)").text
-        #oil.url = oil_col.css("p:nth-of-type(2) [attr ="href"]")
+        oil.url = oil_col.css("p.feature-link [href]")
+        #oil.url = oil_col.css("p:nth-of-type(2) [attr ="href"])
         #oil.url = oil_col.css("p:nth-of-type(2)")[0]
         #oil.url = oil_col.css("href")[0]
         #oil.url = oil_col.css(".feature-link").attr("href")
         #oil.url = oil_col.css("a:nth-of-type(1)")
         
         oil.save
-        #binding.pry
+        binding.pry
       end
     end
 

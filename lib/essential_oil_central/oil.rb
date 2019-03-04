@@ -1,6 +1,6 @@
 #Code to create each oil object and set attributes and descriptions. 
 class EssentialOilCentral::Oil 
-  attr_accessor  :name, :description, :benefits, :aroma, :uses #:url
+  attr_accessor  :name, :description, :benefits, :aroma, :uses, :url
 
  @@all = [] 
 
