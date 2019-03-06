@@ -1,4 +1,5 @@
 #Code to create each oil object and set attributes and descriptions. 
+#Find out if you need to instantiate the oils and add an initialize method or not
 class EssentialOilCentral::Oil 
   attr_accessor  :name, :description, :benefits, :aroma, :uses, :url
 
@@ -16,7 +17,8 @@ end
 #Try to add a feature where the user can obtain additional info about the 
 #oil by typing "more" and the system will open an oil-specific link in the browser!
 #def open_in_browser
- # system("open '' #{}")
+ # system("open '#{url}'")
+  #binding.pry
 #end 
 
 
