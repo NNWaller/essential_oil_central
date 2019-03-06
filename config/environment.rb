@@ -2,13 +2,11 @@
 #Your console and your essential_oil_central files in bin will be dependent on this 
 #environment file instead of individual files
 
-#require 'pry'
-#require 'nokogiri'
-#require 'open-uri'
-
-#require_relative "../lib/essential_oil_central/scraper.rb"
-#require_relative "../lib/essential_oil_central/oil.rb"
-#require_relative "../lib/essential_oil_central/cli.rb"
-#require_relative "../lib/essential_oil_central/version.rb"
-
+#require "open-uri"
+#require "nokogiri"
+#require "pry"  #Remove this before you publish the gem!!!!!
+#require_relative "./essential_oil_central/version"
+#require_relative "./essential_oil_central/scraper"
+#require_relative "./essential_oil_central/oil"
+#require_relative "./essential_oil_central/cli"
 

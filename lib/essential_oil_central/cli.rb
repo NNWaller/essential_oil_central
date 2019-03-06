@@ -26,19 +26,24 @@ class EssentialOilCentral::CLI
         input = nil
       
         while input != "exit"
-          puts " Please enter the number 1-12 of the oil you would like to learn more about or type List to list the oils again or type Exit to exit."
+          puts <<-DOC 
+          
+Please enter the number 1-12 of the oil you would like to learn about.
+Type List to list the oils again or type Exit to exit.
+DOC
           input = gets.strip.downcase
           #The following lines will help us convert the user's input from a string
           #to an integer. It will then allow us to check to see if that integer is
           #between 1-12 for test purposes. Finally, we will be able to access the index of 
           #the @oils array that corresponds to the user's inputted integer -1.
           
-          #Find a way to remove the betwee (1,12) code and replace it with
+          #Find a way to remove the between (1,12) code and replace it with
           #something like if input.to_i-1 <= EssentialOilCentral::Oil.all.length. We 
           #want to be as abstract as possible. 
           if input.to_i.between?(1,12)
+          #if input.to_i <= EssentialOilCentral::Oil.all.length
             #oil = EssentialOilCentral::Oil.scrape_auracasia[input.to_i-1]
-            selected_oil = EssentialOilCentral::Oil.all[input.to_i-1]
+           selected_oil = EssentialOilCentral::Oil.all[input.to_i-1]
 
             #Adjust the CLI layout to accomodate the various lenghts of oil names
             #check into "COLORIZE" for a nice visual feature
@@ -65,11 +70,11 @@ DOC
              list_oils
           end
   
-          elsif input == "list" 
-            list_oils
-          elsif input == "exit"
-            puts "Farewell! Have a splendid day!"
-          elsif 
+        elsif input == "list" 
+          list_oils
+        elsif input == "exit"
+          puts "Farewell! Have a splendid day!"
+        elsif 
             puts "I’m sorry. I did not understand your entry."
           end
         end
