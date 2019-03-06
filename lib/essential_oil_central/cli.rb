@@ -64,13 +64,7 @@ DOC
           elsif
              list_oils
           end
-  #Type List to view the list of oils again.
- # Type Exit to exit. 
-           # input = gets.strip.downcase
-            #if ["Y", "YES"].include? (answer.upcase)
-             # selected_oil.open_in_browser
-          #elsif input == "more"
-            #selected_oil.open_in_browser
+  
           elsif input == "list" 
             list_oils
           elsif input == "exit"

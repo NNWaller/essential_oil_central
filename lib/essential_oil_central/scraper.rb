@@ -19,7 +19,6 @@ class EssentialOilCentral::Scraper
         oil.uses = oil_col.css(":nth-child(7)").text
         oil.url = oil_col.css("a:nth-of-type(1)").first.attr("href")
         
-        oil.save
         
       end
     end
