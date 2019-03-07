@@ -1,4 +1,5 @@
-#Code to scrape the web page. Only for scraping. 
+#Code to scrape the web page. Only for scraping. You should be able to simply make this work once your environment
+#file becomes properly set. Then you can delete these requirements!! 
 require 'pry'
 require 'nokogiri'
 require 'open-uri'

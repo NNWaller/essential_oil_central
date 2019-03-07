@@ -1,4 +1,5 @@
-#require_relative './config/environment'
+#require_relative "../config/environment" 
+#Figure out how to move all this to environment.rb
 require "open-uri"
 require "nokogiri"
 require "pry"  #Remove this before you publish the gem!!!!!

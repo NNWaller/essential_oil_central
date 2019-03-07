@@ -4,12 +4,12 @@ class EssentialOilCentral::CLI
     
    def call
        EssentialOilCentral::Scraper.new.scrape_auracasia   
-        list_oils
-        menu
-        #exit_program
+       list_oils
+       menu
+        
     end
 
-    #This is basically test code that will be modified later.
+    
     def list_oils
         puts "Welcome to Essential Oil Central"
         EssentialOilCentral::Oil.all.each_with_index do |oil, i|
@@ -17,9 +17,6 @@ class EssentialOilCentral::CLI
 
         end
       end
-
-    
-    #end
         
 
     def menu
