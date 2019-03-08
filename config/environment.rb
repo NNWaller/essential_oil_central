@@ -5,7 +5,8 @@
 
 require "open-uri" 
 require "nokogiri" 
-require "pry"  #Remove this before you publish the gem!!!!! 
+require "colorize"
+
 
 require_relative "../lib/essential_oil_central/version" 
 require_relative "../lib/essential_oil_central/scraper" 
