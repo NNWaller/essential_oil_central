@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-#Here we will need to require a relative file that will execute the program.
+#Here we require a relative file that will execute the program.
 
 require_relative '../lib/essential_oil_central'
 EssentialOilCentral::CLI.new.call
