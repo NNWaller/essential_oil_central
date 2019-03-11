@@ -2,5 +2,6 @@
 
 #Here we require a relative file that will execute the program.
 
-require_relative '../lib/essential_oil_central'
+require_relative "../config/environment" 
+
 EssentialOilCentral::CLI.new.call
