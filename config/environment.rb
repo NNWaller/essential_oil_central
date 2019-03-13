@@ -1,5 +1,7 @@
 #This is where you will require all of your required files to make the program run. 
 
+require "bundler/setup"
+require "essential_oil_central" 
 
 require "open-uri" 
 require "nokogiri" 
